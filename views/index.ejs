@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <link rel='stylesheet' href='/public/stylesheets/style.css' />
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="/public/javascripts/angular.min.js"></script>
+    <script src="/public/javascripts/angularApp.js"></script>
+
+    <title>UCSC - Information System 2013/2014 Badge Result</title>
+  </head>
+
+  <body ng-controller="appController">
+  <div>
+      <!-- Getting user input-->
+      <form class="form">
+          <label>Enter your Index Number :</label>
+          <input id="index_num" class="form-controller" type="number" ng-model="index_number" placeholder="Example : 14020646" required>
+          <button id="btn" class="btn btn-info" ng-click="searchResult(index_number)">Search Results</button>
+      </form>
+
+      <!-- Result view-->
+      <div ng-show="isTableShow">
+          <div class="panel panel-info">
+              <div class="panel-heading"> <h4>1st Semester Result</h4> </div>
+              <table>
+                  <tr>
+                      <th>Subject</th>    <th>Grade</th>    <th>GPV</th>  <th>GPV x Credits</th>
+                  </tr>
+
+                  <tr><td style="text-align:left">Programming and Problem Solving (IS 1001)</td><td>{{result_1.programming}}</td><td>{{result_1.pro_gpv}}</td><td>{{result_1.pro_cr}}</td></tr>
+
+                  <tr><td style="text-align:left">Computer Systems (IS 1002)</td><td>{{result_1.com_sci}}</td><td>{{result_1.com_gpv}}</td><td>{{result_1.com_cr}}</td></tr>
+
+                  <tr><td style="text-align:left">Information Systems Concepts (IS 1003)</td><td>{{result_1.inf_sys}}</td><td>{{result_1.inf_gpv}}</td><td>{{result_1.inf_cr}}</td></tr>
+
+                  <tr><td style="text-align:left">Applications Laboratory (IS 1004)</td><td>{{result_1.app_lab}}</td><td>{{result_1.app_gpv}}</td><td>{{result_1.app_cr}}</td></tr>
+
+                  <tr><td style="text-align:left">Introduction to Management (IS 1005)</td><td>{{result_1.mngmnt}}</td><td>{{result_1.mng_gpv}}</td><td>{{result_1.mng_cr}}</td></tr>
+
+                  <tr><td style="text-align:left">Discrete Mathematics I (IS 1006)</td><td>{{result_1.dis_math}}</td><td>{{result_1.dis_gpv}}</td><td>{{result_1.dis_cr}}</td></tr>
+
+                  <tr><td style="text-align:left">Fundamentals of Economics (IS 1007)</td><td>{{result_1.econ}}</td><td>{{result_1.econ_gpv}}</td><td>{{result_1.econ_cr}}</td></tr>
+              </table>
+
+              <div class="extra_panel">
+                  <table>
+                      <tr>
+                          <td><p>Enhancement :</p> <span class={{enhan_1}}></span></td>
+                          <td><p>Semester One GPA :</p><span class="label label-success" style="text-size:25px">{{result_1.current_gpa}}</span><br></td>
+                          <td><p>Semester One Rank : </p><span class="label label-info">{{result_1.rank}}</span></td>
+
+                      </tr>
+                  </table>
+              </div>
+          </div>
+
+          <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
+          <!--    Second semester result view-->
+
+          <div class="panel panel-info">
+              <div class="panel-heading"> <h4>2nd Semester Result</h4> </div>
+              <table>
+                  <tr>
+                      <th>Subject</th>    <th>Grade</th>    <th>GPV</th>  <th>GPV x Credits</th>
+                  </tr>
+
+                  <tr><td style="text-align:left">Financial Accounting (IS 1008)</td><td>{{result_2.programming}}</td><td>{{result_2.pro_gpv}}</td><td>{{result_2.pro_cr}}</td></tr>
+
+                  <tr><td style="text-align:left">Bussiness Communication (IS 1009)</td><td>{{result_2.com_sci}}</td><td>{{result_2.com_gpv}}</td><td>{{result_2.com_cr}}</td></tr>
+
+                  <tr><td style="text-align:left">Database Management (IS 1010)</td><td>{{result_2.inf_sys}}</td><td>{{result_2.inf_gpv}}</td><td>{{result_2.inf_cr}}</td></tr>
+
+                  <tr><td style="text-align:left">System Analyze and Design (IS 1011)</td><td>{{result_2.app_lab}}</td><td>{{result_2.app_gpv}}</td><td>{{result_2.app_cr}}</td></tr>
+
+                  <tr><td style="text-align:left">Discrete Mathematics II (IS 1012)</td><td>{{result_2.mngmnt}}</td><td>{{result_2.mng_gpv}}</td><td>{{result_2.mng_cr}}</td></tr>
+
+                  <tr><td style="text-align:left">Organizational Behaviour (IS 1013)</td><td>{{result_2.dis_math}}</td><td>{{result_2.dis_gpv}}</td><td>{{result_2.dis_cr}}</td></tr>
+
+                  <tr><td style="text-align:left">Computing and Society (IS 1014)</td><td>{{result_2.econ}}</td><td>{{result_2.econ_gpv}}</td><td>{{result_2.econ_cr}}</td></tr>
+              </table>
+
+              <div class="extra_panel">
+                  <table>
+                      <tr>
+                          <!--<td><p>Enhancement :</p> <span class={{enhan_2}}></span></td>-->
+                          <td><p>Semester Two GPA :</p><span class="label label-success">pending... </span></td>
+                          <td><p>Semester Two Rank : </p><span class="label label-info">pending... </span></td>
+
+                      </tr>
+                  </table>
+
+                  <table>
+                      <tr>
+                          <td><p>Overall GPA :</p><span class="label label-warning"> Pending... </span></td>
+                          <td><p>Overall Rank :</p><span class="label label-danger"> Pending... </span></td>
+                      </tr>
+                  </table>
+              </div>
+          </div>
+
+      </div>
+  </div>
+  </body>
+
+</html>
+
