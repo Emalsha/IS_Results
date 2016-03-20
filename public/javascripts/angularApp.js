@@ -12,21 +12,21 @@ function appController($scope,$http){
         var index ={ index:$scope.index_number };
         $http.post('/',index).then(
             function successCallback(response) {
-
-
-                alert(response[0]);
+                $scope.result_1 = response.data[0];
+                $scope.result_2 = response.data[1];
+                //$scope.res = response.data[1];
 
                 $scope.isTableShow = true;
-                if(value.enhancement === 1){
+                if($scope.result_1.enhancement === 1){
                     $scope.enhan_1 = "glyphicon glyphicon-ok";
-                }else if(value.enhancement === 0){
+                }else if($scope.result_1.enhancement === 0){
                     $scope.enhan_1 ="glyphicon glyphicon-remove";
                 }else{
                     $scope.enhan_1 = "glyphicon glyphicon-question-sign";
                 }
             },
             function errorCallback(response) {
-                alert("Erro ..");
+                alert("error occurred during getting data.");
             }
         );
 

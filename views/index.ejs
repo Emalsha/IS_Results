@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html ng-app="app">
   <head>
-    <link rel='stylesheet' href='/public/stylesheets/style.css' />
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel='stylesheet' href='/public/stylesheets/style.css' />
     <script src="/public/javascripts/angular.min.js"></script>
     <script src="/public/javascripts/angularApp.js"></script>
 
@@ -17,6 +17,8 @@
           <input id="index_num" class="form-controller" type="number" ng-model="index_number" placeholder="Example : 14020646" required>
           <button id="btn" class="btn btn-info" ng-click="searchResult(index_number)">Search Results</button>
       </form>
+
+      <!--<div><p>{{ res }}</p></div>-->
 
       <!-- Result view-->
       <div ng-show="isTableShow">
@@ -103,4 +105,3 @@
   </body>
 
 </html>
-

@@ -9,23 +9,18 @@ router.get('/', function(req, res) {
 });
 
 router.post('/',function(req,res){
-
   var index = req.body.index;
   console.log("Requesting data : " + index);
   var results = [];
 
   db1.forEach(function(data){
     if(data.Index_num === index){
-      console.log("found data from db 1");
       results.push(data);
-      console.log("push data 1 to array.");
     }
   });
   db2.forEach(function(data){
     if(data.Index_num === index){
-      console.log("found data from db 2");
       results.push(data);
-      console.log("push data 2 to array");
     }
   });
 
@@ -33,8 +28,6 @@ router.post('/',function(req,res){
 
   res.contentType('application/json');
   res.send(jsonObject);
-
-  console.log(jsonObject);
 });
 
 module.exports = router;
