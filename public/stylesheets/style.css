@@ -1,5 +1,5 @@
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 1em "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 table {
@@ -46,7 +46,7 @@ form{
 }
 
 .label{
-    font-size: 15px;
+    font-size: 1.5625em;
 }
 
 .extra_panel{
