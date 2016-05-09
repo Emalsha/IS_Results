@@ -23,7 +23,6 @@ function appController($scope,$http){
                     if (response.data != "") {
                         $scope.result_1 = response.data[0];
                         $scope.result_2 = response.data[1];
-                        /*$scope.res = response.data;*/
 
                         $scope.isTableShow = true;
                         if($scope.result_1.enhancement === 1){
@@ -33,6 +32,16 @@ function appController($scope,$http){
                         }else{
                             $scope.enhan_1 = "glyphicon glyphicon-question-sign";
                         }
+
+                        if($scope.result_2.Enhancement === 1){
+                            $scope.enhan_2 = "glyphicon glyphicon-ok";
+                        }else if($scope.result_2.Enhancement === 0){
+                            $scope.enhan_2 ="glyphicon glyphicon-remove";
+                        }else{
+                            $scope.enhan_2 = "glyphicon glyphicon-question-sign";
+                        }
+                        
+
                     }else{
                         alert("Please check your index number.");
                     }

@@ -8,6 +8,10 @@ router.get('/', function(req, res) {
   res.render('index');
 });
 
+/*router.get('/admin',function(req,res){
+  res.render('admin');
+});*/
+
 router.post('/',function(req,res){
   var index = req.body.index;
   console.log("Requesting data : " + index);

@@ -18,6 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing       applica
 app.use('/public/stylesheets/style.css',express.static(__dirname + '/public/stylesheets/style.css'));
 app.use('/public/javascripts/angular.min.js',express.static(__dirname + '/public/javascripts/angular.min.js'));
 app.use('/public/javascripts/angularApp.js',express.static(__dirname + '/public/javascripts/angularApp.js'));
+app.use('/public/javascripts/adminApp.js',express.static(__dirname + '/public/javascripts/adminApp.js'));
 
 app.use('/', routes);
 
