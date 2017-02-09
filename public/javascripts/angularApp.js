@@ -23,6 +23,7 @@ function appController($scope,$http){
                     if (response.data != "") {
                         $scope.result_1 = response.data[0];
                         $scope.result_2 = response.data[1];
+                        $scope.result_3 = response.data[2];
 
                         $scope.isTableShow = true;
                         if($scope.result_1.enhancement === 1){

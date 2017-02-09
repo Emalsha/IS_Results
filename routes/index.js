@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var db1 = require("../db/1st sem results.json");
 var db2 = require("../db/2nd sem results.json");
+var db3 = require("../db/second year.json");
 
 /* GET home page. */
 router.get('/', function(req, res) {
@@ -24,6 +25,11 @@ router.post('/',function(req,res){
   });
   db2.forEach(function(data){
     if(data.Index_num === index){
+      results.push(data);
+    }
+  });
+  db3.forEach(function(data){
+    if(data.Index_No === index){
       results.push(data);
     }
   });

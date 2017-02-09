@@ -6,7 +6,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.2/angular.min.js"></script>
     <script src="/public/javascripts/angularApp.js"></script> 
 
-    <title>UCSC - Information System 2013/2014 Badge Result</title>
+    <title>UCSC - Information Systems 2013/2014 Batch Result</title>
   </head>
 
   <body ng-controller="appController">
@@ -20,93 +20,181 @@
 
       <!-- Result view-->
       <div ng-show="isTableShow">
-          <div class="panel panel-info">
+        <div style="padding: 20px; padding-top: 0px;">
+          <div class="panel row">
+          <div class="panel-heading"> <h4 class="text-info">First Year Result</h4> </div>
+          <div class="col-md-1 col-sm-1"></div>
+          <div class="panel panel-info col-md-5 col-sm-10" style="padding: 10px;margin-right: 10px;">
               <div class="panel-heading"> <h4>1st Semester Result</h4> </div>
-              <table>
+              <table >
                   <tr>
-                      <th>Subject</th>    <th>Grade</th>    <th>GPV</th>  <th>GPV x Credits</th>
+                      <th>Subject</th>    <th>Grade</th> 
                   </tr>
 
-                  <tr><td style="text-align:left">Programming and Problem Solving (IS 1001)</td><td>{{result_1.programming}}</td><td>{{result_1.pro_gpv}}</td><td>{{result_1.pro_cr}}</td></tr>
+                  <tr><td style="text-align:left">Programming and Problem Solving (IS 1001)</td><td>{{result_1.programming}}</td></tr>
 
-                  <tr><td style="text-align:left">Computer Systems (IS 1002)</td><td>{{result_1.com_sci}}</td><td>{{result_1.com_gpv}}</td><td>{{result_1.com_cr}}</td></tr>
+                  <tr><td style="text-align:left">Computer Systems (IS 1002)</td><td>{{result_1.com_sci}}</td></tr>
 
-                  <tr><td style="text-align:left">Information Systems Concepts (IS 1003)</td><td>{{result_1.inf_sys}}</td><td>{{result_1.inf_gpv}}</td><td>{{result_1.inf_cr}}</td></tr>
+                  <tr><td style="text-align:left">Information Systems Concepts (IS 1003)</td><td>{{result_1.inf_sys}}</td></tr>
 
-                  <tr><td style="text-align:left">Applications Laboratory (IS 1004)</td><td>{{result_1.app_lab}}</td><td>{{result_1.app_gpv}}</td><td>{{result_1.app_cr}}</td></tr>
+                  <tr><td style="text-align:left">Applications Laboratory (IS 1004)</td><td>{{result_1.app_lab}}</td></tr>
 
-                  <tr><td style="text-align:left">Introduction to Management (IS 1005)</td><td>{{result_1.mngmnt}}</td><td>{{result_1.mng_gpv}}</td><td>{{result_1.mng_cr}}</td></tr>
+                  <tr><td style="text-align:left">Introduction to Management (IS 1005)</td><td>{{result_1.mngmnt}}</td></tr>
 
-                  <tr><td style="text-align:left">Discrete Mathematics I (IS 1006)</td><td>{{result_1.dis_math}}</td><td>{{result_1.dis_gpv}}</td><td>{{result_1.dis_cr}}</td></tr>
+                  <tr><td style="text-align:left">Discrete Mathematics I (IS 1006)</td><td>{{result_1.dis_math}}</td></tr>
 
-                  <tr><td style="text-align:left">Fundamentals of Economics (IS 1007)</td><td>{{result_1.econ}}</td><td>{{result_1.econ_gpv}}</td><td>{{result_1.econ_cr}}</td></tr>
+                  <tr><td style="text-align:left">Fundamentals of Economics (IS 1007)</td><td>{{result_1.econ}}</td></tr>
               </table>
 
               <div class="extra_panel">
-                  <table>
-                      <tr>
-                          <td><p>Enhancement :</p> <span class={{enhan_1}}></span></td>
-                          <td><p>Semester One GPA :</p><span class="label label-success">{{result_1.current_gpa}}</span><br></td>
-                          <td><p>Semester One Rank : </p><span class="label label-info">{{result_1.rank}}</span></td>
-
-                      </tr>
+                  <table >
+                    <tr>
+                      <td colspan="2">End of the first year first semester</td>
+                    </tr>
+                    <tr>
+                      <td>GPA<h4><span class="label label-success">{{result_1.current_gpa}}</span></h4></td>
+                      <td>Rank<h4><span class="label label-info">{{result_1.rank}}</span></h4></td>
+                    </tr>
                   </table>
               </div>
           </div>
 
           <!--////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
           <!--    Second semester result view-->
-
-          <div class="panel panel-info">
+          <div class="col-sm-1"></div>
+          <div class="panel panel-info col-md-5 col-sm-10" style="padding: 10px;margin-left: 10px;">
               <div class="panel-heading"> <h4>2nd Semester Result</h4> </div>
               <table>
                   <tr>
-                      <th>Subject</th>    <th>Grade</th>    <th>GPV</th>  <th>GPV x Credits</th>
+                      <th>Subject</th>    <th>Grade</th> 
                   </tr>
 
-                  <tr><td style="text-align:left">Financial Accounting (IS 1008)</td><td>{{result_2.IS1008}}</td><td>{{result_2.IS1008_gpv}}</td><td>{{result_2.IS1008_cr}}</td></tr>
+                  <tr><td style="text-align:left">Financial Accounting (IS 1008)</td><td>{{result_2.IS1008}}</td></tr>
 
-                  <tr><td style="text-align:left">Bussiness Communication (IS 1009)</td><td>{{result_2.IS1009}}</td><td>{{result_2.IS1009_gpv}}</td><td>{{result_2.IS1009_cr}}</td></tr>
+                  <tr><td style="text-align:left">Bussiness Communication (IS 1009)</td><td>{{result_2.IS1009}}</td></tr>
 
-                  <tr><td style="text-align:left">Database Management (IS 1010)</td><td>{{result_2.IS1010}}</td><td>{{result_2.IS1010_gpv}}</td><td>{{result_2.IS1010_cr}}</td></tr>
+                  <tr><td style="text-align:left">Database Management (IS 1010)</td><td>{{result_2.IS1010}}</td></tr>
 
-                  <tr><td style="text-align:left">System Analyze and Design (IS 1011)</td><td>{{result_2.IS1011}}</td><td>{{result_2.IS1011_gpv}}</td><td>{{result_2.IS1011_cr}}</td></tr>
+                  <tr><td style="text-align:left">System Analyze and Design (IS 1011)</td><td>{{result_2.IS1011}}</td></tr>
 
-                  <tr><td style="text-align:left">Discrete Mathematics II (IS 1012)</td><td>{{result_2.IS1012}}</td><td>{{result_2.IS1012_gpv}}</td><td>{{result_2.IS1012_cr}}</td></tr>
+                  <tr><td style="text-align:left">Discrete Mathematics II (IS 1012)</td><td>{{result_2.IS1012}}</td></tr>
 
-                  <tr><td style="text-align:left">Organizational Behaviour (IS 1013)</td><td>{{result_2.IS1013}}</td><td>{{result_2.IS1013_gpv}}</td><td>{{result_2.IS1013_cr}}</td></tr>
+                  <tr><td style="text-align:left">Organizational Behaviour (IS 1013)</td><td>{{result_2.IS1013}}</td></tr>
 
-                  <tr><td style="text-align:left">Computing and Society (IS 1014)</td><td>{{result_2.IS1014}}</td><td>{{result_2.IS1014_gpv}}</td><td>{{result_2.IS1014_cr}}</td></tr>
+                  <tr><td style="text-align:left">Computing and Society (IS 1014)</td><td>{{result_2.IS1014}}</td></tr>
               </table>
 
               <div class="extra_panel">
                   <table>
                       <tr>
-                          <td><p>Enhancement :</p> <span class={{enhan_2}}></span></td>
-                          <td><p>Semester Two GPA :</p><span class="label label-success">{{result_2.Current_GPA}} </span></td>
-                          <td><p>Semester Two Rank : </p><span class="label label-info">{{result_2.Rank}} </span></td>
-
+                        <td colspan="2">End of the first year second semester</td>
                       </tr>
-                  </table>
-
-                  <table>
                       <tr>
-                          <td><p>Overall GPA :</p><span class="label label-warning"> {{result_2.Overall_GPA}} </span></td>
-                          <td><p>Overall Rank :</p><span class="label label-danger"> {{result_2.Overall_Rank}} </span></td>
+                          <td>GPA<h4><span class="label label-success">{{result_2.Overall_GPA}} </span></h4></td>
+                          <td>Rank<h4><span class="label label-info">{{result_2.Overall_Rank}} </span></h4></td>
                       </tr>
                   </table>
               </div>
           </div>
-      </div>
+          <div class="col-md-1"></div>
+          </div>
 
+          <!-- ///////////////////////////// Second year result -->
+          <div class="panel row">
+          <div class="panel-heading"> <h4 class="text-success">Second Year Result</h4> </div>
+          <div class="col-md-1 col-sm-1"></div>
+          <div class="panel panel-success col-md-5 col-sm-10" style="padding: 10px;margin-right: 10px;">
+              <div class="panel-heading"> <h4>1st Semester Result</h4> </div>
+              <table >
+                  <tr>
+                      <th>Subject</th>    <th>Grade</th> 
+                  </tr>
+
+                  <tr><td style="text-align:left">Software Engineering (IS 2001)</td><td>{{result_3.IS2001}}</td></tr>
+
+                  <tr><td style="text-align:left">Group Project I (IS 2002)</td><td>{{result_3.IS2002}}</td></tr>
+
+                  <tr><td style="text-align:left">Marketing (IS 2003)</td><td>{{result_3.IS2003}}</td></tr>
+
+                  <tr><td style="text-align:left">Web Application Development (IS 2004)</td><td>{{result_3.IS2004}}</td></tr>
+
+                  <tr><td style="text-align:left">Business Statistics (IS 2005)</td><td>{{result_3.IS2005}}</td></tr>
+
+                  <tr><td style="text-align:left">Business Process Management (IS 2006)</td><td>{{result_3.IS2006}}</td></tr>
+
+              </table>
+
+              <div class="extra_panel">
+                  <table >
+                    <tr>
+                      <td colspan="2">End of the second year first semester</td>
+                    </tr>
+                    <tr>
+                      <td>GPA<h4><span class="label label-success">{{result_3.first_sem_gpa}}</span></h4></td>
+                      <td>Rank<h4><span class="label label-info">{{result_3.first_sem_rank}}</span></h4></td>
+                    </tr>
+                  </table>
+              </div>
+          </div>
+          <div class="col-sm-1"></div>
+          <div class="panel panel-success col-md-5 col-sm-10" style="padding: 10px;margin-left: 10px;">
+              <div class="panel-heading"> <h4>2nd Semester Result</h4> </div>
+              <table >
+                  <tr>
+                      <th>Subject</th>    <th>Grade</th> 
+                  </tr>
+
+                  <tr><td style="text-align:left">IT Project Management (IS 2007)</td><td>{{result_3.IS2007}}</td></tr>
+
+                  <tr><td style="text-align:left">Information Systems Management (IS 2008)</td><td>{{result_3.IS2008}}</td></tr>
+
+                  <tr><td style="text-align:left">Information Systems Security (IS 2009)</td><td>{{result_3.IS2009}}</td></tr>
+
+                  <tr><td style="text-align:left">IT Procurement Management (IS 2010)</td><td>{{result_3.IS2010}}</td></tr>
+
+                  <tr><td style="text-align:left">Computer Networks (IS 2011)</td><td>{{result_3.IS2011}}</td></tr>
+
+                  <tr><td style="text-align:left">eBusiness Strategy (IS 2012)</td><td>{{result_3.IS2012}}</td></tr>
+              </table>
+
+              <div class="extra_panel">
+                  <table >
+                    <tr>
+                      <td colspan="2">End of the second year second semester</td>
+                    </tr>
+                    <tr>
+                      <td>GPA<h4><span class="label label-success">{{result_3.second_sem_gpa}}</span></h4></td>
+                      <td>Rank<h4><span class="label label-info">{{result_3.second_sem_rank}}</span></h4></td>
+                    </tr>
+                  </table>
+              </div>
+          </div>
+          <div class="col-md-1"></div>
+          </div>
+
+
+          <table>
+              <tr>
+                  <td><p>Overall GPA </p><h3> <span class="label label-warning"> {{result_3.second_sem_gpa}} </span></h3></td>
+                  <td><p>Overall Rank </p><h3><span class="label label-danger"> {{result_3.second_sem_rank}} </span></h3></td>
+              </tr>
+          </table>
+          <div class="row">
+          <div class="col-md-4 col-sm-1"></div>
+          <div class="alert alert-danger col-md-4 col-sm-10" style="margin-top: 20px;" role='alert'><center> <b>Attention !</b> This is not official result.</center></div>
+
+          </div>
+        </div>
+
+    </div>
       <div id="push"></div>
   </div>
   <div>
   
     <footer id="footer">
       <div id="container">
-        <p>Design and Build for UCSC 2014/2015 Information System Batch<br>
-        &copy; G.H.B.E.Rasad , All right reserve<br>
+        <p>Design and Build for UCSC 2013/2014 Information Systems Batch<br>
+        &copy; G.H.B.E.Rasad , All right reserved<br>
         remalsha@gmail.com</p>
       </div>
 
