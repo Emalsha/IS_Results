@@ -22,6 +22,7 @@ Please rename these file as follow:
 
       sample db 1.json -----> 1st sem results.json
       sample db 2.json -----> 2nd sem results.json
+      sample db 3.json -----> second sem.json (In version 2.0) 
 
 Now your app is ready to use.. 
 
